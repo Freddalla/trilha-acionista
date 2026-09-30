@@ -191,7 +191,7 @@
   }
 
   /* ================= cadastro ================= */
-  const WIZ_STEPS = ["Quem é você", "Sua família", "Seu dia a dia", "Para além do trabalho", "Seu acesso"];
+  const WIZ_STEPS = ["Quem é você", "Sua família", "Seu dia a dia", "Seus hobbies", "Sua senha de acesso"];
   function viewOnboard() {
     const w = S.wiz; const d = w.data; const step = w.step;
     const editing = !!w.editing;
@@ -225,16 +225,18 @@
       const hs = d.hobbies || [];
       const all = Array.from(new Set(C.hobbySuggestions.concat(hs)));
       body = `
+      <p class="muted">Toque nos hobbies que combinam com você. Esta etapa é opcional: se quiser, pule direto para "Continuar".</p>
       <div class="stack-s"><b>Hobbies e coisas que você ama</b><div class="chips">${all.map((h) => `<button type="button" class="chip" data-act="wiz-hobby" data-h="${esc(h)}" aria-pressed="${hs.includes(h)}">${esc(h)}</button>`).join("")}</div>
-      <form class="row" data-form="add-hobby"><input id="w-hobby" type="text" placeholder="Outro hobby" style="flex:1"><button class="btn btn-ghost btn-s" type="submit">Adicionar</button></form></div>
-      <label class="field" for="w-talent">Um talento seu <small>Algo que você faz bem</small><input id="w-talent" type="text" data-bind="talent" value="${esc(d.talent || "")}"></label>
-      <label class="field" for="w-dish">Prato preferido do almoço de domingo<input id="w-dish" type="text" data-bind="dish" value="${esc(d.dish || "")}"></label>`;
+      <label class="field" for="w-hobby">Outro hobby <small>Escreva e toque em Adicionar (ou só continue: o que estiver escrito entra também)</small>
+        <span class="row"><input id="w-hobby" type="text" placeholder="Ex.: Vôlei" style="flex:1"><button class="btn btn-ghost btn-s" type="button" data-act="wiz-add-hobby">Adicionar</button></span></label></div>
+      <label class="field" for="w-talent">Um talento seu <small>Opcional. Algo que você faz bem</small><input id="w-talent" type="text" data-bind="talent" value="${esc(d.talent || "")}"></label>`;
     }
     if (step === 4) body = editing ? `
-      <label class="field" for="w-pin">Novo PIN <small>Deixe em branco para manter o atual</small><input id="w-pin" class="pin" type="password" inputmode="numeric" maxlength="4" data-bind="pin" value="${esc(d.pin || "")}"></label>
-      <label class="field" for="w-pin2">Repita o PIN<input id="w-pin2" class="pin" type="password" inputmode="numeric" maxlength="4" data-bind="pin2" value="${esc(d.pin2 || "")}"></label>` : `
-      <label class="field" for="w-pin">Crie um PIN de 4 números <small>Você vai usar para entrar</small><input id="w-pin" class="pin" type="password" inputmode="numeric" maxlength="4" data-bind="pin" value="${esc(d.pin || "")}"></label>
-      <label class="field" for="w-pin2">Repita o PIN<input id="w-pin2" class="pin" type="password" inputmode="numeric" maxlength="4" data-bind="pin2" value="${esc(d.pin2 || "")}"></label>
+      <label class="field" for="w-pin">Nova senha de 4 números <small>Deixe em branco para manter a atual</small><input id="w-pin" class="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="new-password" data-bind="pin" data-digits value="${esc(d.pin || "")}"></label>
+      <label class="field" for="w-pin2">Repita a nova senha<input id="w-pin2" class="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="new-password" data-bind="pin2" data-digits value="${esc(d.pin2 || "")}"></label>` : `
+      <p class="notice">Crie uma senha de <b>4 números</b> (por exemplo, 2580). Você vai usá-la para entrar na trilha. Guarde bem: se esquecer, alguém do Conselho de Família pode redefinir.</p>
+      <label class="field" for="w-pin">Senha de 4 números<input id="w-pin" class="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="new-password" data-bind="pin" data-digits value="${esc(d.pin || "")}" data-autofocus></label>
+      <label class="field" for="w-pin2">Digite a senha de novo, para confirmar<input id="w-pin2" class="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="new-password" data-bind="pin2" data-digits value="${esc(d.pin2 || "")}"></label>
       <details><summary>Sou do Conselho de Família</summary><label class="field" for="w-admin" style="margin-top:10px">Código de administrador<input id="w-admin" type="text" data-bind="adminCode" value="${esc(d.adminCode || "")}" autocomplete="off"></label></details>`;
     return `<div class="welcome" style="max-width:720px"><section class="panel stack">
       <div class="row between"><span class="eyebrow">Passo ${step + 1} de ${WIZ_STEPS.length}</span>
@@ -244,7 +246,7 @@
       <form class="stack" data-form="wiz" novalidate>${body}
         ${S.flash ? `<div class="feedback no" role="alert">${esc(S.flash)}</div>` : ""}
         <div class="row between">${step > 0 ? `<button type="button" class="btn btn-ghost" data-act="wiz-back">${ico("back", 18)} Voltar</button>` : "<span></span>"}
-          <button type="submit" class="btn btn-hot">${step === WIZ_STEPS.length - 1 ? (editing ? "Salvar" : "Criar perfil") : "Continuar"} ${ico("arrow", 18)}</button></div>
+          <button type="submit" class="btn btn-hot">${step === WIZ_STEPS.length - 1 ? (editing ? "Salvar" : "Criar perfil e entrar") : step === 3 ? "Continuar para a senha" : "Continuar"} ${ico("arrow", 18)}</button></div>
       </form>
     </section></div>`;
   }
@@ -254,8 +256,8 @@
     if (s === 1) { if (!d.branch) return "Escolha o ramo da família."; if (!d.generation) return "Escolha a geração."; }
     if (s === 4) {
       if (S.wiz.editing && !d.pin && !d.pin2) return null;
-      if (!/^\d{4}$/.test(d.pin || "")) return "O PIN precisa ter exatamente 4 números.";
-      if (d.pin !== d.pin2) return "Os dois PINs não são iguais.";
+      if (!/^\d{4}$/.test(d.pin || "")) return "A senha precisa ter exatamente 4 números.";
+      if (d.pin !== d.pin2) return "As duas senhas não são iguais. Digite de novo.";
       if (d.adminCode && d.adminCode.trim() !== C.brand.adminCode) return "Código de administrador incorreto. Deixe em branco se você não é do Conselho.";
     }
     return null;
@@ -263,12 +265,12 @@
   async function wizFinish() {
     const d = S.wiz.data;
     if (S.wiz.editing) {
-      const patch = { name: d.name.trim(), nick: (d.nick || "").trim(), birth: d.birth, byGuardian: !!d.byGuardian, guardian: d.guardian || "", branch: d.branch, generation: d.generation, occupation: d.occupation || "", works: d.works || "", role: d.role || "", hobbies: d.hobbies || [], talent: d.talent || "", dish: d.dish || "" };
+      const patch = { name: d.name.trim(), nick: (d.nick || "").trim(), birth: d.birth, byGuardian: !!d.byGuardian, guardian: d.guardian || "", branch: d.branch, generation: d.generation, occupation: d.occupation || "", works: d.works || "", role: d.role || "", hobbies: d.hobbies || [], talent: d.talent || "" };
       if (d.pin) patch.pinHash = pinHash(d.pin);
       await saveMe(patch); S.wiz = null; toast("Perfil atualizado."); return go("profile");
     }
     const id = uid();
-    const m = { id, name: d.name.trim(), nick: (d.nick || "").trim(), birth: d.birth, byGuardian: !!d.byGuardian, guardian: d.guardian || "", branch: d.branch, generation: d.generation, occupation: d.occupation || "", works: d.works || "", role: d.role || "", hobbies: d.hobbies || [], talent: d.talent || "", dish: d.dish || "",
+    const m = { id, name: d.name.trim(), nick: (d.nick || "").trim(), birth: d.birth, byGuardian: !!d.byGuardian, guardian: d.guardian || "", branch: d.branch, generation: d.generation, occupation: d.occupation || "", works: d.works || "", role: d.role || "", hobbies: d.hobbies || [], talent: d.talent || "",
       pinHash: pinHash(d.pin), isAdmin: !!(d.adminCode && d.adminCode.trim() === C.brand.adminCode), color: avColor(d.name + id), createdAt: Date.now(), lastSeen: Date.now(), progress: {}, xp: 0, answers: {}, missions: {}, courses: [], quizBest: {} };
     S.me = m; ForjaStore.session.set(id);
     await saveMember(m);
@@ -346,7 +348,7 @@
   }
   function modTag(id, i) {
     const mod = C.modules[id]; const done = S.me.progress[id] && S.me.progress[id].done;
-    const kind = { quiz: "Quiz", sort: "Classificar", count: "Contar", sim: "Simulador", reflect: "Reflexão", mission: "Missão em família", aptitude: "Mapa de aptidões" }[mod.activity.type];
+    const kind = { quiz: "Quiz", sort: "Classificar", count: "Contar", sim: "Simulador", reflect: "Reflexão", mission: "Missão em família", aptitude: "Mapa de aptidões", allocate: "Simulador de sócio" }[mod.activity.type];
     return `<button class="tag ${done ? "done" : ""}" data-act="open-mod" data-id="${id}">
       <span class="tag-ico">${ico(mod.icon)}</span>
       <span class="stack-s"><span class="meta">Módulo ${String(i + 1).padStart(2, "0")} · ${mod.minutes} min · ${kind}</span><h3>${esc(mod.title)}</h3>
@@ -431,6 +433,7 @@
         <div class="row" style="justify-content:flex-end"><button class="btn btn-hot" data-act="finish" ${all ? "" : "disabled"}>Concluir missão ${ico("arrow", 18)}</button></div>`;
     }
     if (a.type === "aptitude") return aptitudeHtml(st, true);
+    if (a.type === "allocate") return allocHtml(a.preset, st);
     return "";
   }
 
@@ -451,6 +454,35 @@
         <div class="sim-result ${res < 0 ? "neg" : ""}"><span>${esc(cfg.resultLabel)}</span><b>R$ ${res}</b></div>
         <p class="muted" aria-live="polite">${res === base ? "Este é o cenário base. Mexa nos controles." : res < 0 ? "Prejuízo: os custos passaram das vendas." : `${delta > 0 ? "+" : ""}${delta}% de ${esc(cfg.resultLabel.toLowerCase())} em relação ao cenário base (R$ ${base}).`}</p>
       </div>`;
+  }
+
+  /* ---------- alocação de capital ---------- */
+  function allocHtml(preset, st) {
+    const cfg = C.allocs[preset];
+    st.alloc = st.alloc || Object.fromEntries(cfg.buckets.map((b) => [b.id, b.v]));
+    const sum = cfg.buckets.reduce((t, b) => t + st.alloc[b.id], 0);
+    const ax = { growth: 0, liquidity: 0, control: 0 }; cfg.buckets.forEach((b) => (ax[b.axis] += st.alloc[b.id]));
+    const colors = { growth: "var(--orange)", liquidity: "#3A5BA0", control: "#7F93BF" };
+    const div = st.alloc.div || 0;
+    const tips = [];
+    if (sum !== cfg.total) tips.push(sum < cfg.total ? `Ainda faltam R$ ${cfg.total - sum} milhões para distribuir.` : `Você passou R$ ${sum - cfg.total} milhões do lucro disponível.`);
+    else {
+      if (div < cfg.minDiv) tips.push(`A família precisa de pelo menos R$ ${cfg.minDiv} milhões de dividendos para despesas essenciais. Com menos, cresce o risco de conflito entre sócios.`);
+      if (ax.growth >= 70) tips.push("Aposta forte em crescimento: ótimo para o longo prazo, mas deixa pouca liquidez e reserva para imprevistos.");
+      if (ax.liquidity >= 50) tips.push("Muita distribuição: agrada no curto prazo, mas pode faltar reinvestimento. Lembre da regra das três gerações.");
+      if (ax.control >= 40) tips.push("Muito na reserva: reduz risco, mas o dinheiro parado cria pouco valor se não houver uma política de investimento clara.");
+      if (!tips.length) tips.push("Distribuição equilibrada entre crescimento, liquidez e controle. Numa assembleia real, o que desempata é a visão estratégica que a família definiu.");
+    }
+    return `<span class="eyebrow">Simulador de sócio</span><h3>${esc(cfg.title)}</h3><p class="muted">${esc(cfg.note)}</p>
+      <div class="sim">
+        <div class="bar100" role="img" aria-label="Divisão entre crescimento, liquidez e controle">${Object.keys(ax).map((k) => `<i style="width:${Math.min(100, ax[k])}%;background:${colors[k]}"></i>`).join("")}</div>
+        <div class="legend">${Object.keys(ax).map((k) => `<span><i style="background:${colors[k]}"></i>${cfg.axes[k]}: R$ ${ax[k]} mi</span>`).join("")}</div>
+        ${cfg.buckets.map((b) => `<div class="sim-row"><label for="al-${b.id}">${esc(b.t)} <span class="muted" style="font-size:.8rem">· ${cfg.axes[b.axis]}</span></label><span class="v">R$ ${st.alloc[b.id]} mi</span>
+          <input id="al-${b.id}" type="range" min="0" max="${cfg.total}" step="5" value="${st.alloc[b.id]}" data-alloc="${b.id}"></div>`).join("")}
+        <div class="sim-result ${sum !== cfg.total ? "neg" : ""}"><span>Total distribuído</span><b>R$ ${sum} mi</b></div>
+        <div class="stack-s" aria-live="polite">${tips.map((t) => `<p class="notice">${esc(t)}</p>`).join("")}</div>
+      </div>
+      <div class="row" style="justify-content:flex-end"><button class="btn btn-hot" data-act="alloc-done" ${sum !== cfg.total ? "disabled" : ""}>Registrar minha decisão ${ico("arrow", 18)}</button></div>`;
   }
 
   /* ---------- aptidão ---------- */
@@ -490,7 +522,9 @@
       case "colors": return `<div class="row" style="justify-content:center;gap:24px"><div style="width:120px;height:120px;border-radius:24px;background:#0B1E45"></div><div style="width:120px;height:120px;border-radius:24px;background:#F36F21"></div></div>`;
       case "values": return `<div class="values-list">${C.values.map((x) => `<div><span class="vi">${ico(x.icon)}</span><span>${esc(x.t)}</span></div>`).join("")}</div>`;
       case "valuesKid": return `<div class="values-list">${C.values.map((x) => `<div><span class="vi">${ico(x.icon)}</span><span style="font-size:1.1rem">${esc(x.kid)}</span></div>`).join("")}</div>`;
-      case "timelineMini": return `<div class="proc">${[["Anos 1950", "Colatina"], ["1975", "Nasce a Cedisa"], ["2025", "50 anos"], ["2026", "Fábrica nova"]].map(([y, t], i) => `<div class="${i === 3 ? "us" : ""}"><small class="mono">${y}</small><b>${t}</b></div>`).join("")}</div>`;
+      case "timelineFull": return timelineHtml(true);
+      case "regimento": return `<div class="stats">${[["Até 4", "membros por holding"], ["2 anos", "de mandato, 1 reeleição"], ["4+", "reuniões por ano"], ["15 dias", "de antecedência na convocação"]].map(([b, t]) => `<div class="stat"><b>${b}</b><span>${t}</span></div>`).join("")}</div>`;
+      case "timelineMini": return `<div class="proc">${[["1958", "Ferragens em Colatina"], ["1975", "Nasce a Cedisa"], ["1982", "Planta na Serra"], ["2025", "50 anos e Calogi"]].map(([y, t], i) => `<div class="${i === 3 ? "us" : ""}"><small class="mono">${y}</small><b>${t}</b></div>`).join("")}</div>`;
       case "process": return `<div class="proc">${[["Mina", "Minério de ferro"], ["Usina", "Forno e laminação"], ["Bobinas e chapas", "Aço bruto"], ["Cedisa", "Corta, dobra, perfila"], ["Cliente", "Obra, fábrica, galpão"]].map(([t, s], i) => `<div class="${i === 3 ? "us" : ""}"><b>${t}</b><small>${s}</small></div>`).join("")}</div>`;
       case "coins": return `<div class="coins" role="img" aria-label="100 moedas, 4 são lucro">${Array.from({ length: 100 }, (_, i) => `<i class="${i >= 96 ? "hot" : ""}"></i>`).join("")}</div><p class="muted" style="text-align:center;margin-top:10px">96 moedas pagam as contas · <b style="color:var(--orange-ink)">4 viram lucro</b></p>`;
       case "map": return mapHtml();
@@ -503,6 +537,9 @@
       case "generations": return `<div class="stack-s">${C.family.generations.map((g) => `<div class="row" style="align-items:baseline"><span class="pill navy">${esc(g.g)}</span><span>${esc(g.d)}</span></div>`).join("")}</div>`;
     }
     return "";
+  }
+  function timelineHtml(compact) {
+    return `<div class="timeline">${C.timeline.map((t) => `<div class="tl ${t.y === "2030" ? "future" : ""}"><span class="y">${esc(t.y)}</span><span class="dot"></span><div><b>${esc(t.t)}</b> ${t.co && !compact ? `<span class="pill" style="font-size:.7rem;padding:1px 8px">${esc(t.co)}</span>` : ""}<p class="muted" style="${compact ? "font-size:.9rem" : ""}">${esc(t.d)}</p></div></div>`).join("")}</div>`;
   }
   function mapHtml() {
     const tm = C.tileMap, top = C.topStates;
@@ -592,7 +629,7 @@
     const [ced, val] = C.companies;
     return `
     <section class="stack"><div class="section-head"><div class="stack-s"><span class="eyebrow">${esc(C.brand.group)}</span><h1>Duas empresas, uma família</h1>
-      <p class="muted">${esc(C.family.founders)} começaram no aço em Colatina nos anos 1950. Hoje o Grupo reúne a Cedisa e a Valorização, e a família chega à 4ª geração.</p></div></div></section>
+      <p class="muted">${esc(C.origin)}</p></div></div></section>
     <section class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))">${C.sides.map((s) => `<div class="panel stack-s"><div class="row"><span class="tag-ico">${ico(s.icon)}</span><div><span class="eyebrow">${esc(s.label)}</span><h3>${esc(s.t)}</h3></div></div>
       ${s.label === "Valores" ? `<ul style="margin:0;padding-left:18px">${C.values.map((v) => `<li>${esc(v.t)}</li>`).join("")}</ul>` : `<p>${esc(s.d)}</p>`}</div>`).join("")}</section>
     <section class="panel stack"><div class="section-head"><div class="stack-s"><span class="eyebrow">Cedisa · ${esc(C.numbers.periodo)}</span><h2>Quantas toneladas faturamos</h2></div></div>${gaugeHtml()}<hr class="sep">${visual("trucksBig")}</section>
@@ -606,8 +643,14 @@
         <div class="stack-s"><b>Evolução</b>${visual("evolucao")}<p class="muted">${esc(val.objetivo)}</p></div></div>
     </section>
     <section class="panel stack"><div class="stack-s"><span class="eyebrow">Atuação nacional</span><h2>Onde a Cedisa está</h2></div>${mapHtml()}</section>
-    <section class="panel stack"><div class="stack-s"><span class="eyebrow">Linha do tempo</span><h2>Nossa história</h2></div>
-      <div class="timeline">${C.timeline.map((t) => `<div class="tl ${t.y === "2030" ? "future" : ""}"><span class="y">${esc(t.y)}</span><span class="dot"></span><div><b>${esc(t.t)}</b><p class="muted">${esc(t.d)}</p></div></div>`).join("")}</div></section>`;
+    <section class="panel stack"><div class="stack-s"><span class="eyebrow">Linha do tempo</span><h2>Nossa história</h2><p class="muted" style="max-width:62ch">De Dionísio e da loja de ferragens em Colatina à Central de Aço com operação industrial em quatro estados.</p></div>
+      ${timelineHtml(false)}</section>
+    <section class="stack"><h2>A Cedisa hoje</h2><div class="grid">
+      <div class="panel stack-s"><span class="eyebrow">Matriz</span><h3>Calogi, Serra (ES)</h3><p class="muted">Inaugurada em 2025. R$ 120 milhões de investimento, área de operação de 29 mil m² num complexo de 200 mil m².</p></div>
+      <div class="panel stack-s"><span class="eyebrow">Unidades industriais</span><h3>5 unidades com estoque</h3><p class="muted">Calogi e Cercado da Pedra (Serra/ES), Recife (PE), Salvador (BA) e Volta Redonda (RJ).</p></div>
+      <div class="panel stack-s"><span class="eyebrow">Pontos de venda e escritórios</span><h3>Do Centro-Oeste ao Nordeste</h3><p class="muted">Rio de Janeiro, Macaé, Luís Eduardo Magalhães, Fortaleza, Campo Grande e Cuiabá.</p></div>
+      <div class="panel stack-s"><span class="eyebrow">Qualidade</span><h3>ISO 9001 desde 2004</h3><p class="muted">Gestão da qualidade implantada junto com a expansão de galpões e máquinas. Nova marca lançada em 2022.</p></div>
+    </div></section>`;
   }
 
   /* ================= família ================= */
@@ -629,7 +672,6 @@
     return `<article class="panel member"><div class="top">${avatar(m, "l")}<div class="stack-s" style="gap:2px;min-width:0"><h3>${esc(m.nick || m.name)}</h3><span class="muted" style="font-size:.86rem">${esc(m.occupation || "")}${m.works === "sim" && m.role ? " · " + esc(m.role) : ""}</span></div></div>
       <div class="chips"><span class="pill navy">${esc(m.generation || "—")}</span><span class="pill">${esc(m.branch || "")}</span><span class="pill hot">${esc(b.name)}</span>${apt ? `<span class="pill">Aço: ${esc(apt.name)}</span>` : ""}${m.demo ? `<span class="pill">exemplo</span>` : ""}</div>
       ${(m.hobbies || []).length ? `<p style="font-size:.92rem"><b>Curte:</b> ${m.hobbies.map(esc).join(", ")}</p>` : ""}
-      ${m.dish ? `<p class="muted" style="font-size:.88rem">Prato de domingo: ${esc(m.dish)}</p>` : ""}
       <div class="stack-s"><div class="row between" style="font-size:.84rem"><span class="muted">Trilha ${esc(b.name)}</span><span class="mono">${pr.pct}%</span></div><div class="progress"><i style="width:${pr.pct}%"></i></div></div></article>`;
   }
 
@@ -690,9 +732,12 @@
       <div class="panel stack"><h2>Os fóruns de decisão</h2><p class="muted">Cada assunto tem o seu lugar. A família fala no Conselho de Família; o dono vota na Assembleia; a estratégia é do Conselho de Administração.</p><div class="vis">${govHtml()}</div></div>
     </section>
     <section class="panel stack"><h2>O papel do Conselho de Família</h2><ul style="margin:0;padding-left:18px;columns:2 280px;column-gap:32px">${G.council.map((c) => `<li style="margin-bottom:6px">${esc(c)}</li>`).join("")}</ul></section>
+    <section class="stack"><div class="section-head"><div class="stack-s"><span class="eyebrow">Resumo simples</span><h2>Regimento Interno do Conselho de Família</h2><p class="muted">As regras que organizam o nosso Conselho, capítulo por capítulo.</p></div></div>
+      <div class="panel flat">${visual("regimento")}</div>
+      <div class="grid-2" style="align-items:start">${C.regimento.map((r) => `<details class="panel flat stack-s"><summary><span class="eyebrow" style="display:block">${esc(r.cap)}</span>${esc(r.t)}</summary><ul style="margin:10px 0 0;padding-left:18px">${r.items.map((i) => `<li style="margin-bottom:4px">${esc(i)}</li>`).join("")}</ul></details>`).join("")}</div></section>
     <section class="stack"><h2>Boas práticas que inspiram</h2><div class="grid">${G.inspirations.map((i) => `<div class="panel stack-s"><h3>${esc(i.t)}</h3><p class="muted">${esc(i.d)}</p></div>`).join("")}</div>
       <p class="notice">As regras do Grupo Cedisa são definidas pelo próprio Conselho de Família. As referências acima servem para inspirar a conversa.</p></section>
-    <section class="panel flat stack-s"><span class="eyebrow">Sobre a plataforma</span><h3>Um modelo replicável</h3><p class="muted">A Forja foi desenhada para servir a outras famílias empresárias: marca, números, trilhas, perguntas e cursos ficam num único arquivo de conteúdo. Troque o conteúdo e a mesma estrutura atende outro grupo.</p></section>`;
+    <section class="panel flat stack-s"><span class="eyebrow">Sobre a plataforma</span><h3>Um modelo replicável</h3><p class="muted" style="font-size:.88rem">Referências: ${C.references.map(esc).join(" · ")}.</p><p class="muted">A Forja foi desenhada para servir a outras famílias empresárias: marca, números, trilhas, perguntas e cursos ficam num único arquivo de conteúdo. Troque o conteúdo e a mesma estrutura atende outro grupo.</p></section>`;
   }
 
   /* ================= perfil ================= */
@@ -711,7 +756,7 @@
       <div class="panel stack"><div class="row">${avatar(m, "l")}<div><h2>${esc(m.name)}</h2><p class="muted">${esc(m.generation || "")} · ${esc(m.branch || "")}${ageOf(m) != null ? " · " + ageOf(m) + " anos" : ""}</p></div></div>
         <div class="chips"><span class="pill hot">Trilha ${esc(b.name)}</span><span class="pill">${esc(lv.l.t)} · ${fmt(m.xp || 0)} XP</span>${m.isAdmin ? `<span class="pill navy">Conselho de Família</span>` : ""}</div>
         <dl class="stack-s" style="margin:0">
-          ${[["Ocupação", m.occupation], ["No Grupo", m.works === "sim" ? m.role || "Sim" : m.works === "nao" ? "Não trabalha no Grupo" : ""], ["Hobbies", (m.hobbies || []).join(", ")], ["Talento", m.talent], ["Prato de domingo", m.dish], ["Responsável", m.byGuardian ? m.guardian : ""]].filter(([, v]) => v).map(([k, v]) => `<div><dt class="eyebrow">${k}</dt><dd style="margin:2px 0 0">${esc(v)}</dd></div>`).join("")}
+          ${[["Ocupação", m.occupation], ["No Grupo", m.works === "sim" ? m.role || "Sim" : m.works === "nao" ? "Não trabalha no Grupo" : ""], ["Hobbies", (m.hobbies || []).join(", ")], ["Talento", m.talent], ["Responsável", m.byGuardian ? m.guardian : ""]].filter(([, v]) => v).map(([k, v]) => `<div><dt class="eyebrow">${k}</dt><dd style="margin:2px 0 0">${esc(v)}</dd></div>`).join("")}
         </dl>
         <div class="row"><button class="btn btn-ghost btn-s" data-act="edit-profile">Editar perfil</button><button class="btn btn-ghost btn-s" data-act="theme">${ico("moon", 16)} Tema: ${theme === "dark" ? "escuro" : theme === "light" ? "claro" : "automático"}</button><button class="btn btn-ghost btn-s" data-act="logout">Sair</button></div>
       </div>
@@ -791,8 +836,9 @@
     "pick-login": (el) => { S.flash = null; go("login", { id: el.dataset.id }); },
     "wiz-back": () => { S.flash = null; S.wiz.step--; render(); },
     "wiz-set": (el) => { S.wiz.data[el.dataset.f] = el.dataset.val; render(); },
+    "wiz-add-hobby": () => { document.querySelectorAll("[data-bind]").forEach((x) => { S.wiz.data[x.dataset.bind] = x.type === "checkbox" ? x.checked : x.value; }); if (addTypedHobby()) render(); else toast("Escreva o hobby no campo antes de adicionar."); },
     "wiz-hobby": (el) => { const h = el.dataset.h, hs = S.wiz.data.hobbies || (S.wiz.data.hobbies = []); const i = hs.indexOf(h); i >= 0 ? hs.splice(i, 1) : hs.push(h); render(); },
-    "edit-profile": () => { const m = S.me; S.flash = null; S.wiz = { step: 0, editing: true, data: { name: m.name, nick: m.nick, birth: m.birth, byGuardian: m.byGuardian, guardian: m.guardian, branch: m.branch, generation: m.generation, occupation: m.occupation, works: m.works, role: m.role, hobbies: (m.hobbies || []).slice(), talent: m.talent, dish: m.dish } }; go("onboard"); },
+    "edit-profile": () => { const m = S.me; S.flash = null; S.wiz = { step: 0, editing: true, data: { name: m.name, nick: m.nick, birth: m.birth, byGuardian: m.byGuardian, guardian: m.guardian, branch: m.branch, generation: m.generation, occupation: m.occupation, works: m.works, role: m.role, hobbies: (m.hobbies || []).slice(), talent: m.talent } }; go("onboard"); },
     logout: () => { ForjaStore.session.set(""); S.me = null; S.lesson = null; go("welcome"); },
     theme: () => { const r = document.documentElement; const cur = r.getAttribute("data-theme"); const next = cur === "dark" ? "light" : cur === "light" ? "" : "dark"; next ? r.setAttribute("data-theme", next) : r.removeAttribute("data-theme"); try { localStorage.setItem("forja-theme", next); } catch (e) {} render(); },
     "set-band": (el) => { saveMe({ bandOverride: el.dataset.id || "" }).then(render); },
@@ -811,6 +857,11 @@
     },
     "c-tap": (el) => { const st = S.lesson.act; const i = +el.dataset.i; if (!st.tapped.includes(i)) { st.tapped.push(i); if (bandOf(S.me).mode === "kid") speak(String(st.tapped.length)); } render(); },
     "c-pick": (el) => { S.lesson.act.picked = +el.dataset.o; render(); },
+    "alloc-done": () => {
+      const L = S.lesson, cfg = C.allocs[C.modules[L.id].activity.preset]; const al = L.act.alloc;
+      const txt = cfg.buckets.map((b) => `${b.t}: R$ ${al[b.id]} mi`).join("\n");
+      saveMe({ answers: Object.assign({}, S.me.answers, { [L.id]: "Minha alocação:\n" + txt }) }).then(() => finishModule(null));
+    },
     "sim-after": () => { const st = S.lesson.act; st.phase = "after"; st.i = 0; st.picked = null; st.right = 0; render(); },
     finish: () => { const a = C.modules[S.lesson.id].activity; finishModule(a.type === "sim" && a.after ? S.lesson.act.right : null); },
     "m-tog": (el) => { const id = S.lesson.id, i = +el.dataset.i; const ms = Object.assign({}, S.me.missions); const arr = (ms[id] || []).slice(); arr[i] = !arr[i]; ms[id] = arr; saveMe({ missions: ms }).then(render); },
@@ -857,9 +908,9 @@
     "demo-add": async () => {
       const y = new Date().getFullYear();
       const demo = [
-        ["Ana (exemplo)", `${y - 38}-03-10`, "3ª geração", "Família Cláudio", "Arquiteta", "nao", ["Viajar", "Fotografia", "Praia"], "solda", { "l-historia": 1, "e-porque": 1, "e-governanca": 1 }, 160],
+        ["Ana (exemplo)", `${y - 38}-03-10`, "3ª geração", "Família Claudionor", "Arquiteta", "nao", ["Viajar", "Fotografia", "Praia"], "solda", { "l-historia": 1, "e-porque": 1, "e-governanca": 1 }, 160],
         ["Bruno (exemplo)", `${y - 29}-07-22`, "3ª geração", "Família José", "Cedisa · Coordenador de logística", "sim", ["Futebol", "Pescar", "Churrasco"], "bobina", { "e-porque": 1, "e-dre": 1, "e-estrategia": 1, "e-valorizacao": 1 }, 240],
-        ["Lia (exemplo)", `${y - 8}-01-15`, "4ª geração", "Família Cláudio", "3º ano", "", ["Desenhar", "Lego", "Praia"], null, { "l-historia": 1, "l-processo": 1 }, 70],
+        ["Lia (exemplo)", `${y - 8}-01-15`, "4ª geração", "Família Claudionor", "3º ano", "", ["Desenhar", "Lego", "Praia"], null, { "l-historia": 1, "l-processo": 1 }, 70],
         ["Theo (exemplo)", `${y - 2}-11-02`, "4ª geração", "Família José", "Ainda não vai à escola", "", ["Bichos"], null, { "m-caminhao": 1 }, 25]
       ];
       for (const [name, birth, generation, branch, occ, works, hobbies, apt, prog, xp] of demo) {
@@ -880,15 +931,22 @@
     return {};
   }
 
+  function addTypedHobby() {
+    const el = document.getElementById("w-hobby"); if (!el || !S.wiz) return false;
+    const vals = el.value.split(",").map((v) => v.trim()).filter(Boolean); if (!vals.length) return false;
+    const hs = S.wiz.data.hobbies || (S.wiz.data.hobbies = []);
+    vals.forEach((v) => { if (!hs.includes(v)) hs.push(v); }); el.value = ""; return true;
+  }
+
   /* ================= formulários ================= */
   const F = {
     wiz: () => {
       document.querySelectorAll("[data-bind]").forEach((el) => { S.wiz.data[el.dataset.bind] = el.type === "checkbox" ? el.checked : el.value; });
+      addTypedHobby();
       const err = wizValidate(); S.flash = err;
       if (err) return render();
       if (S.wiz.step < WIZ_STEPS.length - 1) { S.wiz.step++; render(); window.scrollTo({ top: 0 }); } else wizFinish();
     },
-    "add-hobby": () => { const el = document.getElementById("w-hobby"); const v = el.value.trim(); if (!v) return; document.querySelectorAll("[data-bind]").forEach((x) => { S.wiz.data[x.dataset.bind] = x.type === "checkbox" ? x.checked : x.value; }); const hs = S.wiz.data.hobbies || (S.wiz.data.hobbies = []); if (!hs.includes(v)) hs.push(v); render(); },
     login: () => {
       const pin = document.getElementById("login-pin").value; const m = memberById(S.p.id);
       if (!m) return go("login");
@@ -923,8 +981,17 @@
     const f = ev.target.closest("[data-form]"); if (!f) return; ev.preventDefault();
     const fn = F[f.dataset.form]; if (fn) fn(f);
   });
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter" && ev.target && ev.target.id === "w-hobby" && ev.target.value.trim()) { ev.preventDefault(); A["wiz-add-hobby"](); }
+  });
   document.addEventListener("input", (ev) => {
     const el = ev.target;
+    if (el.dataset && el.dataset.digits !== undefined) { const v = el.value.replace(/\D/g, "").slice(0, 4); if (v !== el.value) el.value = v; }
+    if (el.dataset && el.dataset.alloc && S.lesson) {
+      S.lesson.act.alloc[el.dataset.alloc] = +el.value;
+      const id = el.id; render(); const again = document.getElementById(id); if (again) again.focus();
+      return;
+    }
     if (el.dataset && el.dataset.sim && S.lesson) {
       S.lesson.act.vals[el.dataset.sim] = +el.value;
       const id = el.id; render(); const again = document.getElementById(id); if (again) again.focus();

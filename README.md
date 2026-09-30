@@ -17,6 +17,15 @@ mapa de aptidões.
 | Viga | 18–24 | Papéis do acionista, leitura da DRE, indicadores, SPE, caminhos de carreira |
 | Estrutura | 25+ | Governança, alavancas e riscos, estratégia 2030, sucessão |
 
+## Governança (Cambridge Family Enterprise Group e IBGC)
+
+Módulos adaptados por idade: escutar e conversar (crianças), riqueza como pomar e os três
+chapéus (7–12), regra das três gerações, conversas difíceis e tipos de sócio (13–17),
+decisões indelegáveis, alocação de capital (simulador), acordo de sócios e protocolo,
+regime de bens (18–24), Regimento do Conselho de Família, quatro pilares da riqueza entre
+gerações, harmonia x alinhamento e sucessão como parceria (25+). O resumo do Regimento
+Interno do Conselho de Família fica na página Governança.
+
 ## Seções
 
 Início · Trilha · Desafio do Aço (quiz com placar) · O Grupo (missão, visão, valores, números,

@@ -94,7 +94,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .nav button[aria-current="page"] { opacity: 1; background: var(--orange); color: #fff; }
 .me-chip { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 0; color: inherit; border-radius: 999px; padding: 4px 10px 4px 4px; cursor: pointer; flex: none; }
 .me-chip span { font-weight: 600; font-size: .9rem; max-width: 10ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-@media (max-width: 1180px) { .brand-txt span { display: none; } }
+@media (max-width: 1340px) { .brand-txt span { display: none; } }
 @media (max-width: 760px) {
   .topbar-in { flex-wrap: wrap; gap: 8px; }
   .nav { order: 3; flex-basis: 100%; }
@@ -266,9 +266,9 @@ textarea { min-height: 110px; resize: vertical; }
 
 /* sim */
 .sim { display: grid; gap: 14px; }
-.sim-row { display: grid; grid-template-columns: minmax(0, 1fr) 70px; gap: 6px 14px; align-items: center; }
+.sim-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 14px; align-items: center; }
 .sim-row input[type=range] { grid-column: 1 / -1; accent-color: var(--orange); width: 100%; }
-.sim-row .v { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 600; }
+.sim-row .v { white-space: nowrap; text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 600; }
 .bar100 { display: flex; height: 36px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
 .bar100 > i { display: block; height: 100%; }
 .sim-result { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 16px; border-radius: var(--r-m); background: var(--navy); color: #fff; }

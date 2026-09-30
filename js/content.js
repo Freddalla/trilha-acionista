@@ -90,27 +90,39 @@ window.FORJA = {
     { t: "Nosso lado responsável", label: "Valores", d: "Cinco valores que guiam cada decisão.", icon: "people" }
   ],
 
+  origin: "A história da Cedisa começou com Dionísio Dalla Bernardina, que iniciou uma trajetória de empreendedorismo ao lado de seus filhos. Em 1958 surge a Irmãos Dalla Bernardina S/A Ferragens, em Colatina (ES), sob a administração dos filhos mais velhos, José e Claudionor. Esse legado familiar foi o ponto de partida para uma jornada que atravessa gerações.",
+
   timeline: [
-    { y: "Anos 1950", t: "O começo em Colatina", d: "Os irmãos José e Cláudio Dalla Bernardina começam a trabalhar no ramo do aço em Colatina (ES)." },
-    { y: "Anos 1970", t: "Nasce a Valorização", d: "A primeira loteadora do Espírito Santo, com atuação forte na Serra e em Aracruz." },
-    { y: "1975", t: "Nasce a Cedisa", d: "A Central de Aço começa como distribuidora e, com o tempo, passa a beneficiar o aço." },
-    { y: "Décadas seguintes", t: "O Brasil como mercado", d: "Filiais e pontos de venda do Mato Grosso ao Ceará, com operação industrial em Recife, Salvador e Volta Redonda." },
-    { y: "2020", t: "Novo ciclo da Valorização", d: "Foco em condomínios industriais, comerciais e logísticos." },
-    { y: "2024", t: "Área em Aracruz", d: "O Grupo compra uma grande área em Aracruz, de olho em novas expansões." },
-    { y: "2025", t: "50 anos de Cedisa", d: "Meio século de história, fechando o ano com faturamento perto de R$ 1 bilhão." },
-    { y: "2026", t: "Fábrica nova em Calogi", d: "Investimento de R$ 120 milhões na Serra. A área de operação quase dobra: de 16 mil para 29 mil m², num complexo de 200 mil m²." },
-    { y: "2030", t: "Meta: dobrar", d: "Dobrar o faturamento e consolidar a Cedisa como referência nacional." }
+    { y: "1958", co: "Cedisa", t: "Irmãos Dalla Bernardina", d: "Inauguração da Irmãos Dalla Bernardina S/A Ferragens, em Colatina (ES), administrada por José e Claudionor, filhos de Dionísio." },
+    { y: "Anos 1970", co: "Valorização", t: "Nasce a Valorização", d: "A primeira loteadora do Espírito Santo, com atuação forte na Serra e em Aracruz." },
+    { y: "1975", co: "Cedisa", t: "Fundação da Cedisa", d: "A Cedisa – Central de Aço nasce sucedendo a Irmãos Dalla Bernardina." },
+    { y: "1982", co: "Cedisa", t: "Planta na Serra", d: "Inauguração da planta em Serra (ES)." },
+    { y: "1984", co: "Cedisa", t: "Primeiras filiais", d: "Filiais em Itabuna (BA) e Colatina (ES), e escritório em Macaé (RJ)." },
+    { y: "1994", co: "Cedisa", t: "Salvador", d: "Início da filial de Salvador (BA)." },
+    { y: "2004", co: "Cedisa", t: "Mais máquinas e ISO 9001", d: "Expansão dos galpões, instalação de novas máquinas e início da implantação da ISO 9001." },
+    { y: "2007", co: "Cedisa", t: "Macaé", d: "Abertura da filial em Macaé (RJ)." },
+    { y: "2010", co: "Cedisa", t: "Virada industrial", d: "Início do fortalecimento do processo industrial: a Cedisa passa a transformar cada vez mais o aço." },
+    { y: "2012", co: "Cedisa", t: "Recife", d: "Início da filial em Recife (PE)." },
+    { y: "2013", co: "Cedisa", t: "Rio de Janeiro", d: "Início do escritório no Rio de Janeiro (RJ)." },
+    { y: "2020", co: "Grupo", t: "Estocagem e novo ciclo", d: "Ampliação da área de estocagem da Matriz. A Valorização inicia o foco em condomínios industriais, comerciais e logísticos." },
+    { y: "2022", co: "Cedisa", t: "Cercado da Pedra, Cuiabá e nova marca", d: "Filial industrial em Cercado da Pedra – Serra (ES), escritório de vendas em Cuiabá (MT) e lançamento da nova marca da Cedisa Central de Aço S.A." },
+    { y: "2023", co: "Cedisa", t: "Volta Redonda", d: "Início das operações da filial industrial em Volta Redonda (RJ)." },
+    { y: "2024", co: "Grupo", t: "Fortaleza e Aracruz", d: "Inauguração do ponto de venda de Fortaleza (CE). O Grupo compra uma grande área em Aracruz, de olho em novas expansões." },
+    { y: "2025", co: "Cedisa", t: "50 anos e nova Matriz", d: "Inauguração da nova planta da Matriz em Calogi – Serra (ES), com investimento de R$ 120 milhões, e novos pontos de venda. Meio século de Cedisa, com faturamento perto de R$ 1 bilhão." },
+    { y: "2026", co: "Cedisa", t: "Calogi a pleno vapor", d: "100% das atividades transferidas para Calogi. A área de operação sai de 16 mil para 29 mil m², num complexo de 200 mil m²." },
+    { y: "2030", co: "Cedisa", t: "Meta: dobrar", d: "Dobrar o faturamento e consolidar a Cedisa como referência nacional." }
   ],
 
   family: {
-    founders: "Cláudio e José Dalla Bernardina",
+    founders: "José e Claudionor Dalla Bernardina",
     generations: [
-      { g: "1ª geração", d: "Os fundadores. Duas famílias, a de Cláudio e a de José, que começaram tudo." },
+      { g: "1ª geração", d: "Os fundadores José e Claudionor, filhos de Dionísio. Duas famílias que começaram tudo." },
       { g: "2ª geração", d: "11 membros. Alguns fazem parte do Conselho de Administração." },
       { g: "3ª geração", d: "5 pessoas já atuam na empresa, em cargos diferentes." },
       { g: "4ª geração", d: "Está chegando. É para ela que esta trilha começa no Minério." }
     ],
-    branches: ["Família Cláudio", "Família José"],
+    branches: ["Família Claudionor", "Família José"],
+    holdings: ["Santa Lucia Participação e Agropecuária S/A", "Ultrapar Participação e Agropecuária S/A"],
     traditions: ["Almoço de domingo", "Natal em família"]
   },
 
@@ -127,7 +139,7 @@ window.FORJA = {
     { city: "Fortaleza", uf: "CE", kind: "venda" },
     { city: "Campo Grande", uf: "MS", kind: "venda" },
     { city: "Cuiabá", uf: "MT", kind: "venda" },
-    { city: "Cercado da Pedra", uf: "", kind: "venda" }
+    { city: "Cercado da Pedra (Serra)", uf: "ES", kind: "industrial" }
   ],
   // Mapa em blocos (coluna, linha) — cada estado é um quadrado.
   tileMap: {
@@ -144,19 +156,19 @@ window.FORJA = {
   /* ---------- Faixas etárias = etapas do aço ---------- */
   bands: [
     { id: "minerio", name: "Minério", min: 0, max: 3, age: "0 a 3 anos", line: "A matéria-prima de tudo.", mode: "kid", guide: "Para fazer no colo de um adulto: ler em voz alta, apontar, brincar.",
-      modules: ["m-caminhao", "m-cores", "m-forte", "m-domingo"] },
+      modules: ["m-caminhao", "m-cores", "m-forte", "m-escutar", "m-domingo"] },
     { id: "faisca", name: "Faísca", min: 4, max: 6, age: "4 a 6 anos", line: "O fogo que acende a curiosidade.", mode: "kid", guide: "Brincadeiras curtas. Um adulto pode ler junto.",
-      modules: ["f-oque", "f-contar", "f-valores", "f-cofrinho", "f-missao"] },
+      modules: ["f-oque", "f-contar", "f-valores", "f-conversar", "f-cofrinho", "f-missao"] },
     { id: "lingote", name: "Lingote", min: 7, max: 9, age: "7 a 9 anos", line: "Tomando forma.", mode: "kid",
-      modules: ["l-historia", "l-processo", "l-mapa", "l-100reais", "l-valores"] },
+      modules: ["l-historia", "l-processo", "l-mapa", "l-100reais", "l-sementes", "l-valores"] },
     { id: "chapa", name: "Chapa", min: 10, max: 12, age: "10 a 12 anos", line: "Pronta para ser moldada.", mode: "teen",
-      modules: ["c-grupo", "c-produtos", "c-numeros", "c-brigadeiro", "c-valorizacao", "c-entrevista"] },
+      modules: ["c-grupo", "c-linha", "c-produtos", "c-numeros", "c-brigadeiro", "c-chapeus", "c-valorizacao", "c-entrevista"] },
     { id: "perfil", name: "Perfil", min: 13, max: 17, age: "13 a 17 anos", line: "Ganhando dobra e função.", mode: "teen",
-      modules: ["p-circulos", "p-dinheiro", "p-dre", "p-mercado", "p-valorizacao", "p-aptidao", "p-futuro"] },
+      modules: ["p-circulos", "p-3geracoes", "p-dinheiro", "p-dre", "p-mercado", "p-conversas", "p-socios", "p-valorizacao", "p-aptidao", "p-futuro"] },
     { id: "viga", name: "Viga", min: 18, max: 24, age: "18 a 24 anos", line: "Sustenta o que vem.", mode: "adult",
-      modules: ["v-papeis", "v-dre", "v-indicadores", "v-valorizacao", "v-caminhos", "v-aptidao"] },
+      modules: ["v-papeis", "v-decisoes", "v-dre", "v-indicadores", "v-capital", "v-protocolo", "v-bens", "v-valorizacao", "v-caminhos", "v-aptidao"] },
     { id: "estrutura", name: "Estrutura", min: 25, max: 200, age: "25 anos ou mais", line: "Sustenta e une o conjunto.", mode: "adult",
-      modules: ["e-porque", "e-governanca", "e-dre", "e-estrategia", "e-valorizacao", "e-sucessao", "e-aptidao"] }
+      modules: ["e-porque", "e-historia", "e-governanca", "e-regimento", "e-riqueza", "e-dre", "e-capital", "e-estrategia", "e-valorizacao", "e-conflitos", "e-sucessao", "e-aptidao"] }
   ],
 
   levels: [
@@ -260,12 +272,13 @@ window.FORJA = {
     "l-historia": {
       title: "A história que começou em Colatina", icon: "book", minutes: 5,
       cards: [
-        { t: "Dois irmãos e muito aço", b: "Nos anos 1950, os irmãos José e Cláudio Dalla Bernardina começaram a trabalhar com aço em Colatina, no Espírito Santo." },
-        { t: "Nasce a Cedisa", b: "Em 1975 nasceu a Cedisa – Central de Aço. Em 2025 ela fez 50 anos! Hoje a família já está chegando na 4ª geração.", visual: "timelineMini" },
-        { t: "Uma fábrica nova", b: "Em 2026 a Cedisa foi para uma fábrica nova e bem maior em Calogi, na Serra." }
+        { t: "O bisavô Dionísio", b: "Tudo começou com Dionísio Dalla Bernardina, que trabalhava junto com os filhos. Em 1958 os filhos mais velhos, José e Claudionor, abriram uma loja de ferragens em Colatina, no Espírito Santo: a Irmãos Dalla Bernardina." },
+        { t: "Nasce a Cedisa", b: "Em 1975 a loja virou a Cedisa – Central de Aço. Em 2025 ela fez 50 anos! Hoje a família já está chegando na 4ª geração.", visual: "timelineMini" },
+        { t: "Uma fábrica nova", b: "Em 2025 a Cedisa inaugurou uma fábrica nova e bem maior em Calogi, na Serra." }
       ],
       activity: { type: "quiz", questions: [
-        { q: "Em que cidade a história começou?", options: ["Colatina", "São Paulo", "Recife"], answer: 0, explain: "Colatina, no Espírito Santo." },
+        { q: "Em que cidade a história começou?", options: ["Colatina", "São Paulo", "Recife"], answer: 0, explain: "Colatina, no Espírito Santo, em 1958." },
+        { q: "O que era a primeira loja da família?", options: ["Uma loja de ferragens", "Uma padaria", "Uma loja de brinquedos"], answer: 0, explain: "A Irmãos Dalla Bernardina S/A Ferragens." },
         { q: "Quantos anos a Cedisa fez em 2025?", options: ["10", "50", "100"], answer: 1, explain: "50 anos! Meio século." },
         { q: "Você faz parte de qual geração?", options: ["2ª", "3ª ou 4ª", "1ª"], answer: 1, explain: "As crianças de hoje são da 4ª geração, e os pais da 3ª." }
       ] }
@@ -409,10 +422,10 @@ window.FORJA = {
       title: "Onde a Cedisa atua", icon: "map", minutes: 6,
       cards: [
         { t: "Sudeste e Nordeste", b: "Os 5 estados que mais compram: Espírito Santo, Bahia, Pernambuco, Rio de Janeiro e São Paulo.", visual: "map" },
-        { t: "Filiais", b: "Campo Grande, Cuiabá, Fortaleza, Luís Eduardo Magalhães, Macaé, Recife, Rio de Janeiro, Salvador, Volta Redonda e Cercado da Pedra. Em Recife, Salvador e Volta Redonda há atividade industrial com estoque; nas demais, pontos de venda." }
+        { t: "Filiais", b: "Campo Grande, Cuiabá, Fortaleza, Luís Eduardo Magalhães, Macaé, Recife, Rio de Janeiro, Salvador, Volta Redonda e Cercado da Pedra (Serra). Além da Matriz em Calogi, há atividade industrial com estoque em Cercado da Pedra, Recife, Salvador e Volta Redonda; nas demais, pontos de venda e escritórios." }
       ],
       activity: { type: "quiz", questions: [
-        { q: "Em quais filiais há atividade industrial com estoque?", options: ["Recife, Salvador e Volta Redonda", "Cuiabá, Macaé e Fortaleza", "Só na Serra"], answer: 0, explain: "Além da matriz na Serra (ES)." },
+        { q: "Em quais filiais fora do ES há atividade industrial com estoque?", options: ["Recife, Salvador e Volta Redonda", "Cuiabá, Macaé e Fortaleza", "Nenhuma"], answer: 0, explain: "No ES, além da Matriz em Calogi, há a filial industrial de Cercado da Pedra." },
         { q: "Qual destes NÃO está no top 5 de estados?", options: ["Bahia", "Pernambuco", "Mato Grosso"], answer: 2, explain: "O top 5: ES, BA, PE, RJ e SP." }
       ] }
     },
@@ -521,7 +534,7 @@ window.FORJA = {
       cards: [
         { t: "As gerações", b: "1ª geração: os fundadores. 2ª geração: 11 membros, alguns no Conselho de Administração. 3ª geração: 5 pessoas atuando na empresa em diferentes cargos. 4ª geração: chegando.", visual: "generations" },
         { t: "Os fóruns", b: "Assembleia (propriedade), Conselho de Administração (estratégia e fiscalização da gestão), Diretoria (operação) e Conselho de Família (união, valores, formação e regras de convivência).", visual: "governance" },
-        { t: "O papel do Conselho de Família", b: "Organizar a educação dos acionistas (como esta trilha), preparar a sucessão, propor o protocolo familiar, mediar conflitos, cuidar das tradições e ser a ponte entre a família e o Conselho de Administração." }
+        { t: "O papel do Conselho de Família", b: "Pelo Regimento Interno: promover a coesão da família, planejar a educação dos membros (como esta trilha), elaborar e revisar o Protocolo Familiar, facilitar a comunicação entre família e empresa, zelar pelo planejamento patrimonial e sucessório e criar comitês temáticos." }
       ],
       activity: { type: "quiz", questions: [
         { q: "Qual fórum fiscaliza a gestão e define a estratégia?", options: ["Conselho de Administração", "Conselho de Família", "Assembleia de condomínio"], answer: 0, explain: "O CA orienta a estratégia e acompanha a diretoria." },
@@ -543,7 +556,7 @@ window.FORJA = {
       title: "Estratégia 2030", icon: "target", minutes: 8,
       cards: [
         { t: "Onde estamos", b: "50 anos completados em 2025, com faturamento perto de R$ 1 bilhão. Beneficiamento já é 70% do volume." },
-        { t: "A nova fábrica", b: "R$ 120 milhões investidos na nova sede em Calogi, na Serra. Área de operação de 16 mil para 29 mil m², num complexo de 200 mil m², com acesso ao Contorno do Mestre Álvaro." },
+        { t: "A nova fábrica", b: "Inaugurada em 2025, com R$ 120 milhões investidos na nova Matriz em Calogi, na Serra. Área de operação de 16 mil para 29 mil m², num complexo de 200 mil m², com acesso ao Contorno do Mestre Álvaro." },
         { t: "Aonde vamos", b: "Dobrar o faturamento até 2030 e ser referência nacional em distribuição e beneficiamento de aço." }
       ],
       activity: { type: "quiz", questions: [
@@ -563,6 +576,7 @@ window.FORJA = {
       title: "Sucessão e a 4ª geração", icon: "people", minutes: 8,
       cards: [
         { t: "Sucessão é um processo", b: "Não é um evento. Começa na infância, com valores e histórias, passa pela formação e pela experiência, e termina com responsabilidades assumidas aos poucos." },
+        { t: "Parceria entre gerações", b: "O jeito mais eficaz de fazer a sucessão é a geração sênior e a próxima trabalharem juntas: definir papéis, construir a estratégia a quatro mãos, ouvir e dividir os méritos. A geração sênior também precisa de um novo papel significativo depois da transição." },
         { t: "O seu papel", b: "Pais e tios da 3ª geração são os primeiros professores da 4ª. Acompanhe a trilha dos pequenos, faça as missões junto e leve-os para conhecer a fábrica." }
       ],
       activity: { type: "mission", prompt: "Compromissos para este semestre:", tasks: [
@@ -619,6 +633,8 @@ window.FORJA = {
       { q: "O que vem primeiro na fábrica?", options: ["Segurança", "Pressa", "Bagunça"], answer: 0 },
       { q: "Quantos caminhões saem por dia, mais ou menos?", options: ["3", "31", "300"], answer: 1 },
       { q: "Em que cidade a história da família começou?", options: ["Colatina", "Paris", "Brasília"], answer: 0 },
+      { q: "Quem é o bisavô que começou tudo?", options: ["Dionísio", "Pedro", "Antônio"], answer: 0 },
+      { q: "Numa briga com o primo, o que ajuda?", options: ["Conversar e escutar", "Gritar mais alto", "Nunca mais falar com ele"], answer: 0 },
       { q: "O aço é...", options: ["Mole como gelatina", "Forte e duro", "Feito de papel"], answer: 1 },
       { q: "Lucro é...", options: ["O que sobra depois de pagar as contas", "Tudo o que a gente vende", "Um tipo de caminhão"], answer: 0 },
       { q: "Quantos anos a Cedisa fez em 2025?", options: ["5", "50", "500"], answer: 1 },
@@ -633,7 +649,12 @@ window.FORJA = {
       { q: "A Valorização foi a primeira ___ do ES.", options: ["loteadora", "siderúrgica", "construtora de navios"], answer: 0 },
       { q: "Média de caminhões por dia em 2026:", options: ["13", "31", "103"], answer: 1 },
       { q: "PPR significa:", options: ["Programa de Participação nos Resultados", "Plano de Produção Regional", "Preço Por Remessa"], answer: 0 },
-      { q: "Em quais filiais há atividade industrial?", options: ["Recife, Salvador e Volta Redonda", "Cuiabá e Fortaleza", "Nenhuma"], answer: 0 },
+      { q: "Em quais filiais fora do ES há atividade industrial?", options: ["Recife, Salvador e Volta Redonda", "Cuiabá e Fortaleza", "Nenhuma"], answer: 0 },
+      { q: "Em que ano nasceu a Irmãos Dalla Bernardina, em Colatina?", options: ["1958", "1975", "1994"], answer: 0 },
+      { q: "Quem administrava a Irmãos Dalla Bernardina?", options: ["José e Claudionor", "Dionísio sozinho", "Um sócio de fora"], answer: 0 },
+      { q: "Qual ditado resume a 'regra das 3 gerações'?", options: ["Pai rico, filho nobre, neto pobre", "Quem espera sempre alcança", "Devagar se vai longe"], answer: 0 },
+      { q: "O que é um sócio 'ativo'?", options: ["Engajado, estuda os temas e contribui nas decisões", "Só recebe dividendos", "Bloqueia todas as decisões"], answer: 0 },
+      { q: "Escuta ativa é...", options: ["Repetir com suas palavras o que o outro disse para mostrar que entendeu", "Esperar a sua vez de falar", "Concordar com tudo"], answer: 0 },
       { q: "Qual é a visão da Cedisa?", options: ["Ser referência em todo território nacional", "Ser a maior do mundo", "Ficar só no ES"], answer: 0 },
       { q: "Os três círculos da empresa familiar são:", options: ["Família, Propriedade e Gestão", "Venda, Compra e Frete", "Aço, Ferro e Inox"], answer: 0 },
       { q: "Meta da Cedisa para 2030:", options: ["Dobrar o faturamento", "Fechar filiais", "Vender a Valorização"], answer: 0 }
@@ -650,7 +671,16 @@ window.FORJA = {
       { q: "Três frentes da Valorização:", options: ["Locação, parcerias em loteamentos e áreas com potencial futuro", "Aço, frete e varejo", "Construção, mineração e energia"], answer: 0 },
       { q: "Faturamento aproximado da Cedisa em 2025:", options: ["R$ 100 milhões", "Perto de R$ 1 bilhão", "R$ 10 bilhões"], answer: 1 },
       { q: "Desde quando a Valorização foca em condomínios industriais e logísticos?", options: ["1990", "2020", "2026"], answer: 1 },
-      { q: "Membros da 2ª geração:", options: ["5", "11", "20"], answer: 1 }
+      { q: "Membros da 2ª geração:", options: ["5", "11", "20"], answer: 1 },
+      { q: "Quantas reuniões ordinárias por ano o Conselho de Família faz, no mínimo?", options: ["2", "4", "12"], answer: 1 },
+      { q: "Mandato de um membro do Conselho de Família:", options: ["1 ano", "2 anos, com uma reeleição", "Vitalício"], answer: 1 },
+      { q: "Quantos membros cada holding pode indicar ao Conselho de Família?", options: ["Até 2", "Até 4", "Até 10"], answer: 1 },
+      { q: "Como o Coordenador do Conselho de Família participa do Conselho de Administração?", options: ["Como observador, sem voto", "Como presidente", "Não participa"], answer: 0 },
+      { q: "Com quanta antecedência as reuniões do Conselho de Família são convocadas?", options: ["2 dias", "15 dias", "60 dias"], answer: 1 },
+      { q: "No triângulo da alocação de capital, os três objetivos são:", options: ["Crescimento, controle e liquidez", "Lucro, receita e custo", "Família, empresa e sociedade"], answer: 0 },
+      { q: "União familiar significa:", options: ["Alinhamento sobre valores, missão e visão, mesmo com opiniões diferentes", "Todos concordarem sempre", "Ausência total de conflito"], answer: 0 },
+      { q: "Em que ano foi lançada a nova marca da Cedisa?", options: ["2012", "2022", "2025"], answer: 1 },
+      { q: "Qual cidade recebeu a primeira filial da Cedisa na Bahia, em 1984?", options: ["Itabuna", "Salvador", "Ilhéus"], answer: 0 }
     ]
   },
 
@@ -681,6 +711,7 @@ window.FORJA = {
     { id: "cafe-conselho", t: "Café com o Conselho", org: "Conselho de Família", kind: "Encontro", bands: ["viga", "estrutura"], d: "Conversa aberta sobre resultados e estratégia com membros do Conselho." },
     { id: "ibgc-familia", t: "Governança em empresas familiares", org: "IBGC", kind: "Curso", url: "https://www.ibgc.org.br", bands: ["viga", "estrutura"], d: "Referência nacional em governança corporativa, com cursos para famílias empresárias e conselheiros." },
     { id: "fdc-pda", t: "Parceria para o Desenvolvimento de Acionistas (PDA)", org: "Fundação Dom Cabral", kind: "Programa", url: "https://www.fdc.org.br", bands: ["viga", "estrutura"], d: "Programa voltado a acionistas e sucessores de empresas familiares." },
+    { id: "cfeg-wt", t: "Winter Training para novas gerações", org: "Cambridge Family Enterprise Group", kind: "Programa", url: "https://www.cfeg.com", bands: ["viga", "estrutura"], d: "Imersão de uma semana sobre governança, mentalidade de sócio, cultura, sucessão e capital para jovens de famílias empresárias." },
     { id: "b3-edu", t: "Cursos gratuitos de finanças e investimentos", org: "B3 Educação", kind: "Curso online", url: "https://edu.b3.com.br", bands: ["perfil", "viga", "estrutura"], d: "Do básico de finanças pessoais à leitura de demonstrações financeiras." },
     { id: "sebrae-fin", t: "Educação financeira e empreendedorismo", org: "Sebrae", kind: "Curso online", url: "https://sebrae.com.br", bands: ["chapa", "perfil", "viga"], d: "Cursos curtos e gratuitos, bons para começar." },
     { id: "senai-metal", t: "Cursos técnicos em metalmecânica e logística", org: "SENAI", kind: "Formação técnica", url: "https://www.portaldaindustria.com.br/senai/", bands: ["perfil", "viga"], d: "Para conhecer o chão de fábrica do setor do aço." },
@@ -690,7 +721,7 @@ window.FORJA = {
 
   /* ---------- Notícias do Grupo (fixas) ---------- */
   news: [
-    { date: "2026", tag: "Cedisa", t: "Fábrica de Calogi em operação", b: "Investimento de R$ 120 milhões na Serra, com 100% das atividades transferidas e a área de operação saindo de 16 mil para 29 mil m²." },
+    { date: "2025–2026", tag: "Cedisa", t: "Nova Matriz em Calogi", b: "Inaugurada em 2025 com investimento de R$ 120 milhões na Serra. Em 2026, 100% das atividades foram transferidas, e a área de operação saindo de 16 mil para 29 mil m²." },
     { date: "2026", tag: "Cedisa", t: "Meta: dobrar o faturamento até 2030", b: "Depois de fechar 2025 perto de R$ 1 bilhão, a Cedisa entra num novo ciclo de crescimento planejado." },
     { date: "2025", tag: "Cedisa", t: "50 anos de história", b: "Meio século transformando aço em solução, do Espírito Santo para o Brasil." },
     { date: "2024", tag: "Grupo", t: "Nova área em Aracruz", b: "O Grupo Cedisa comprou uma grande área em Aracruz, de olho em novas expansões." }
@@ -707,12 +738,12 @@ window.FORJA = {
       { t: "Preparar a sucessão", d: "Formação contínua, da 4ª geração no colo até os futuros conselheiros." }
     ],
     council: [
-      "Organizar a educação dos acionistas, como esta trilha",
-      "Propor e revisar o protocolo familiar",
-      "Cuidar das tradições e dos encontros",
-      "Mediar conflitos antes que cheguem à empresa",
-      "Ser a ponte entre a família e o Conselho de Administração",
-      "Acompanhar a formação e as aptidões de cada membro"
+      "Promover a coesão familiar e a integração entre os familiares",
+      "Planejar e executar programas de educação e desenvolvimento dos membros da família, como esta trilha",
+      "Elaborar e revisar periodicamente o Protocolo Familiar",
+      "Facilitar a comunicação entre os membros da família e entre a empresa e a família",
+      "Zelar pelo planejamento patrimonial e sucessório da família",
+      "Criar e acompanhar comitês temáticos para questões específicas"
     ],
     inspirations: [
       { t: "Protocolo familiar", d: "Famílias como os Baumgart definiram em protocolo quem pode trabalhar no grupo, com formação mínima e experiência prévia em outras empresas." },
@@ -722,3 +753,303 @@ window.FORJA = {
     ]
   }
 };
+
+/* ============================================================
+ * Módulos de governança e história (referências: Cambridge Family
+ * Enterprise Group, Winter Training 2025; IBGC, cadernos de
+ * Governança da Família Empresária e Sucessão). Conteúdo adaptado
+ * e resumido com palavras próprias para cada faixa etária.
+ * ============================================================ */
+Object.assign(window.FORJA.modules, {
+
+  /* ---- Minério ---- */
+  "m-escutar": {
+    title: "Orelhas atentas", icon: "people", minutes: 3,
+    cards: [
+      { t: "Escutar é um superpoder", b: "Na nossa família a gente escuta quem está falando. Olho no olho, boca fechadinha, orelhas atentas. Brinque de 'estátua da escuta' com a criança enquanto alguém conta uma história." }
+    ],
+    activity: { type: "mission", prompt: "Brincadeiras para fazer juntos:", tasks: [
+      "Contar uma história curta e pedir para a criança repetir o final",
+      "Brincar de 'minha vez, sua vez' com um brinquedo",
+      "Dizer 'obrigado' e 'por favor' três vezes hoje"
+    ] }
+  },
+
+  /* ---- Faísca ---- */
+  "f-conversar": {
+    title: "Brigar ou conversar?", icon: "chat", minutes: 4,
+    cards: [
+      { t: "Todo mundo discorda às vezes", b: "Irmãos e primos nem sempre querem a mesma coisa. Tudo bem! Família unida não é família que nunca discorda: é família que conversa e resolve junto." },
+      { t: "As palavras mágicas", b: "Comece falando 'Eu me senti...'. Escute o outro até o fim. Depois pensem juntos numa solução boa para os dois." }
+    ],
+    activity: { type: "sort", prompt: "Isso ajuda ou atrapalha a resolver uma briga?", bins: ["Ajuda 🤝", "Atrapalha 💥"], items: [
+      { t: "Escutar até o fim", bin: 0 }, { t: "Gritar", bin: 1 }, { t: "Dizer 'eu me senti triste'", bin: 0 }, { t: "Pegar o brinquedo à força", bin: 1 }, { t: "Pedir desculpas", bin: 0 }, { t: "Falar 'você é chato'", bin: 1 }
+    ] }
+  },
+
+  /* ---- Lingote ---- */
+  "l-sementes": {
+    title: "Riqueza é como um pomar", icon: "spark", minutes: 5,
+    cards: [
+      { t: "Um ditado antigo", b: "Existe um ditado: 'pai rico, filho nobre, neto pobre'. Ele diz que muitas famílias perdem o que construíram em três gerações. Em vários países existe um ditado parecido!" },
+      { t: "Como evitar?", b: "Pense num pomar. Se a família só colhe as frutas e ninguém planta árvores novas, um dia o pomar acaba. Cada geração precisa plantar sementes novas: estudar, trabalhar, cuidar e ter ideias." },
+      { t: "O que cresce e o que gasta", b: "Para o pomar ficar grande, precisa crescer mais rápido do que a família come. Gastar tudo, brigar e não aprender fazem o pomar encolher." }
+    ],
+    activity: { type: "sort", prompt: "Isso faz o pomar da família crescer ou encolher?", bins: ["Cresce 🌳", "Encolhe 🍂"], items: [
+      { t: "Estudar e aprender", bin: 0 }, { t: "Gastar tudo o que ganha", bin: 1 }, { t: "Ter uma ideia nova", bin: 0 }, { t: "Brigar e parar de se falar", bin: 1 }, { t: "Guardar parte da mesada", bin: 0 }, { t: "Cuidar do que já temos", bin: 0 }
+    ] }
+  },
+
+  /* ---- Chapa ---- */
+  "c-linha": {
+    title: "Da loja de ferragens à Central de Aço", icon: "book", minutes: 7,
+    cards: [
+      { t: "1958: tudo começa em Colatina", b: "Dionísio Dalla Bernardina empreendia ao lado dos filhos. Em 1958 os mais velhos, José e Claudionor, assumem a Irmãos Dalla Bernardina S/A Ferragens, em Colatina (ES)." },
+      { t: "1975 a 1994: nasce e cresce a Cedisa", b: "Em 1975 a Cedisa sucede a Irmãos Dalla Bernardina. Em 1982 inaugura a planta na Serra; em 1984 abre filiais em Itabuna (BA) e Colatina e um escritório em Macaé; em 1994 chega a Salvador." },
+      { t: "2004 a 2013: indústria e qualidade", b: "Novos galpões, máquinas e a ISO 9001 (2004). Macaé vira filial (2007), o processo industrial se fortalece (2010), Recife abre (2012) e o Rio ganha escritório (2013)." },
+      { t: "2020 a 2025: um novo tamanho", b: "Mais estoque na Matriz (2020); Cercado da Pedra, Cuiabá e nova marca (2022); Volta Redonda (2023); Fortaleza (2024); e em 2025, 50 anos com a nova Matriz em Calogi.", visual: "timelineFull" }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "Qual era o nome da primeira empresa, em 1958?", options: ["Irmãos Dalla Bernardina S/A Ferragens", "Cedisa Central de Aço", "Valorização"], answer: 0, explain: "A loja de ferragens em Colatina, que em 1975 deu lugar à Cedisa." },
+      { q: "Em que ano a Cedisa inaugurou a planta na Serra?", options: ["1958", "1982", "2022"], answer: 1, explain: "Em 1982." },
+      { q: "Qual foi a primeira filial fora do Espírito Santo, em 1984?", options: ["Itabuna (BA)", "Recife (PE)", "Cuiabá (MT)"], answer: 0, explain: "Itabuna, na Bahia." },
+      { q: "O que aconteceu em 2025?", options: ["A Cedisa fez 50 anos e inaugurou a nova Matriz em Calogi", "A Cedisa foi fundada", "Abriu a primeira filial"], answer: 0, explain: "Meio século e uma nova casa!" }
+    ] }
+  },
+  "c-chapeus": {
+    title: "Os três chapéus", icon: "circles", minutes: 5,
+    cards: [
+      { t: "Um chapéu para cada lugar", b: "Na família empresária, cada pessoa pode usar até três chapéus: o de membro da família (almoço de domingo), o de dono ou sócio (decide o futuro da empresa) e o de quem trabalha na empresa (faz o dia a dia).", visual: "circles3" },
+      { t: "Trocar de chapéu na hora certa", b: "No almoço de domingo, usamos o chapéu da família. Numa reunião de sócios, o chapéu de dono. Misturar os chapéus é uma das maiores causas de confusão e briga." }
+    ],
+    activity: { type: "sort", prompt: "Qual chapéu a pessoa está usando?", bins: ["Família", "Sócio", "Trabalho"], items: [
+      { t: "Comemorar o aniversário da vovó", bin: 0 }, { t: "Votar se a empresa vai abrir uma filial", bin: 1 }, { t: "Atender um cliente em Salvador", bin: 2 }, { t: "Decidir quanto do lucro vai para dividendos", bin: 1 }, { t: "Operar uma máquina de corte", bin: 2 }, { t: "Passar o Natal juntos", bin: 0 }
+    ] }
+  },
+
+  /* ---- Perfil ---- */
+  "p-3geracoes": {
+    title: "A regra das três gerações", icon: "chart", minutes: 7,
+    cards: [
+      { t: "Um fenômeno mundial", b: "No Brasil se diz 'pai rico, filho nobre, neto pobre'. Na Itália, 'dos estábulos às estrelas e de volta aos estábulos'. Nos EUA, 'de mangas de camisa a mangas de camisa em três gerações'. No Brasil, só cerca de 30% das empresas familiares chegam à 2ª geração e 15% à 3ª." },
+      { t: "Por que acontece?", b: "A família cresce mais rápido que a empresa. A nova geração nem sempre é preparada ou engajada. As ações se dividem entre muitos primos, que passam a olhar só para dividendos e têm menos apetite para risco. E o mercado muda cada vez mais rápido." },
+      { t: "A trajetória da regeneração", b: "Famílias longevas criam novos ciclos de riqueza: visão de longo prazo compartilhada, união em torno de um propósito, espírito empreendedor, desenvolvimento de talentos em cada geração e patrimônio crescendo mais que o consumo da família." }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "Qual destas é uma causa da 'regra das 3 gerações'?", options: ["A família cresce mais rápido que a empresa", "A empresa tem clientes demais", "Os funcionários são muito bons"], answer: 0, explain: "Mais herdeiros dividindo o mesmo bolo." },
+      { q: "O que mais ajuda uma família a 'regenerar' a riqueza?", options: ["Preparar talentos e empreender em cada geração", "Distribuir todo o lucro", "Nunca mudar nada"], answer: 0, explain: "Cada geração precisa criar valor, não só herdar." },
+      { q: "Qual porcentagem aproximada das empresas familiares brasileiras chega à 3ª geração?", options: ["15%", "50%", "90%"], answer: 0, explain: "Cerca de 15%. A Cedisa já está com a 3ª geração atuando e a 4ª chegando." }
+    ] }
+  },
+  "p-conversas": {
+    title: "Conversas difíceis", icon: "chat", minutes: 7,
+    cards: [
+      { t: "Toda conversa difícil tem três camadas", b: "O que aconteceu (os fatos e quem tem razão), os sentimentos (o que cada um sente) e a identidade (o que aquilo diz sobre mim). Quando só discutimos quem tem razão, a conversa trava." },
+      { t: "Troque certezas por curiosidade", b: "Em vez de 'quem está certo?', pergunte 'por que vemos isso de jeitos diferentes?'. Em vez de 'de quem é a culpa?', pense 'o que cada um fez para chegar aqui?'." },
+      { t: "Escuta ativa", b: "Parafraseie (repita com suas palavras o que entendeu), investigue (faça perguntas abertas) e reconheça o sentimento do outro. Use frases começando com 'Eu', separe fatos de julgamentos e faça uma pausa de três segundos antes de responder." }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "Seu primo diz: 'Você nunca me chama para nada!'. Qual resposta é escuta ativa?", options: ["'Você está chateado porque sentiu que ficou de fora, é isso?'", "'Mentira, eu chamei semana passada.'", "'Você é muito sensível.'"], answer: 0, explain: "Parafrasear e reconhecer o sentimento abre a conversa." },
+      { q: "Qual frase separa fato de julgamento?", options: ["'Você chegou 30 minutos depois do combinado.'", "'Você é irresponsável.'", "'Você sempre atrasa tudo.'"], answer: 0, explain: "Fatos específicos não acusam; julgamentos provocam defesa." },
+      { q: "Qual é a melhor postura numa discordância familiar?", options: ["Curiosidade", "Certeza", "Silêncio total"], answer: 0, explain: "Curiosidade para entender por que o outro vê diferente." }
+    ] }
+  },
+  "p-socios": {
+    title: "Que tipo de sócio você vai ser?", icon: "people", minutes: 6,
+    cards: [
+      { t: "Bons sócios não nascem prontos", b: "Eles são preparados. Um dia você poderá ser sócio do Grupo, e o jeito de exercer esse papel faz toda a diferença." },
+      { t: "Os tipos de sócio", b: "Obstrutivo: trava decisões. Passivo: não acompanha nada, só recebe. Apoiador: acompanha os temas importantes e apoia quem decide. Ativo: se engaja, estuda e contribui nas decisões. Empreendedor: lidera, assume riscos e cria valor." },
+      { t: "Muitas formas de contribuir", b: "Nem todo mundo precisa trabalhar na empresa. Dá para contribuir como membro da governança, unificador da família, criador de novos negócios, líder de impacto social, conector de pessoas ou executivo." }
+    ],
+    activity: { type: "sort", prompt: "Esse comportamento é de um sócio desejável ou indesejável?", bins: ["Desejável", "Indesejável"], items: [
+      { t: "Lê o material antes da assembleia", bin: 0 }, { t: "Nunca aparece nas reuniões", bin: 1 }, { t: "Vota contra tudo sem explicar", bin: 1 }, { t: "Propõe um novo negócio com plano", bin: 0 }, { t: "Faz perguntas para entender a estratégia", bin: 0 }, { t: "Só pergunta quando sai o dividendo", bin: 1 }
+    ] }
+  },
+
+  /* ---- Viga ---- */
+  "v-decisoes": {
+    title: "As decisões que só o sócio pode tomar", icon: "target", minutes: 8,
+    cards: [
+      { t: "Decisões indelegáveis", b: "Algumas decisões não podem ser passadas para executivos: são dos sócios. Visão estratégica, cultura, investimentos, pessoas-chave, governança e transição para a próxima geração." },
+      { t: "O que cada uma envolve", b: "Visão: o que queremos alcançar em X anos. Cultura: proteger e adaptar o jeito de ser que nos fez chegar até aqui. Investimentos: escolher boas apostas e saber sair das ruins. Pessoas: escolher e avaliar líderes, e trocar quando necessário. Governança: estruturas e regras claras de decisão. Transição: preparar a próxima geração." },
+      { t: "O chapéu de sócio", b: "O gestor olha a 20 metros de altura (o dia a dia). O conselho, a 100 metros. O sócio precisa subir a 10 mil metros: tendências, riscos, oportunidades e o futuro de longo prazo." }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "Qual destas é uma decisão indelegável dos sócios?", options: ["Definir a visão estratégica de longo prazo", "Escolher o fornecedor de papel", "Montar a escala de férias"], answer: 0, explain: "Visão é papel do dono." },
+      { q: "Saber 'sair de más apostas' vale para...", options: ["Investimentos e pessoas", "Só imóveis", "Nada, sócio nunca desiste"], answer: 0, explain: "Reconhecer erros e corrigir o rumo é uma habilidade central do sócio." },
+      { q: "A que 'altura' o sócio deve olhar o negócio?", options: ["10 mil metros: visão ampla e de longo prazo", "20 metros: detalhes da operação", "No chão: o caixa do dia"], answer: 0, explain: "Altitude para enxergar tendências e o futuro." }
+    ] }
+  },
+  "v-capital": {
+    title: "Onde colocar o lucro?", icon: "coin", minutes: 10,
+    cards: [
+      { t: "O triângulo da alocação de capital", b: "Toda família empresária equilibra três objetivos: crescimento (reinvestir e novos negócios), liquidez (dividendos e dinheiro disponível para a família) e controle (manter o comando e reduzir riscos). Não dá para maximizar os três ao mesmo tempo." },
+      { t: "Um caso para praticar", b: "Uma empresa familiar hipotética lucrou R$ 100 milhões. As opções: reinvestir na expansão, pagar dividendos, criar um novo negócio de um membro da 3ª geração, apoiar a fundação da família ou montar um fundo de reserva. Como você dividiria?" }
+    ],
+    activity: { type: "allocate", preset: "caso" }
+  },
+  "v-protocolo": {
+    title: "Acordo de sócios e protocolo familiar", icon: "book", minutes: 8,
+    cards: [
+      { t: "Acordo de sócios", b: "Documento com as regras da sociedade: órgãos de governança e como são eleitos, alçadas de decisão, compra e venda de ações, avaliação das participações, política de dividendos, confidencialidade, não concorrência e transações entre partes relacionadas." },
+      { t: "Protocolo familiar", b: "Complementa o acordo de sócios e os regimentos. Explicita as regras da família entre si e com o negócio: valores, missão e visão, comunicação, regime de bens, política de empregabilidade de familiares, educação, novos negócios, uso de bens e funcionários da empresa, filantropia e gestão de conflitos." },
+      { t: "O processo importa tanto quanto o documento", b: "O protocolo deve ser construído com a participação da família e revisado a cada 3 a 5 anos. As conversas para escrevê-lo já criam alinhamento." }
+    ],
+    activity: { type: "sort", prompt: "Esse tema fica no Acordo de Sócios ou no Protocolo Familiar?", bins: ["Acordo de Sócios", "Protocolo Familiar"], items: [
+      { t: "Regras para compra e venda de ações", bin: 0 }, { t: "Critérios para familiares trabalharem na empresa", bin: 1 }, { t: "Política de dividendos", bin: 0 }, { t: "Uso de bens e funcionários da empresa pela família", bin: 1 }, { t: "Método de avaliação das participações", bin: 0 }, { t: "Programa de educação das novas gerações", bin: 1 }
+    ] }
+  },
+  "v-bens": {
+    title: "Namoro, casamento e patrimônio", icon: "shield", minutes: 8,
+    cards: [
+      { t: "Por que pensar nisso agora?", b: "Decisões desta fase da vida, como casar ou morar junto, afetam a herança que você vai receber e a que você vai deixar. Pensar nisso é cuidado com a família, não desconfiança." },
+      { t: "Regimes de bens, em resumo", b: "Sem pacto, casamento e união estável seguem a comunhão parcial: a herança em si não se comunica, mas os rendimentos e dividendos dela, sim. Na separação total, definida por pacto antenupcial, o patrimônio herdado e seus frutos ficam protegidos." },
+      { t: "Ferramentas de planejamento", b: "Testamento, doação com cláusulas (incomunicabilidade, inalienabilidade), holding patrimonial, previdência privada. Metade do patrimônio (a legítima) vai obrigatoriamente aos herdeiros necessários. Conteúdo educativo: cada caso deve ser visto com advogado." }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "Na comunhão parcial sem pacto, os dividendos recebidos de uma herança...", options: ["Se comunicam com o cônjuge", "Nunca se comunicam", "Vão para o governo"], answer: 0, explain: "A herança em si não, mas os rendimentos dela sim." },
+      { q: "Qual regime protege o patrimônio herdado e seus rendimentos?", options: ["Separação total de bens, por pacto antenupcial", "Comunhão universal", "Não existe proteção"], answer: 0, explain: "Por isso muitas famílias empresárias orientam o pacto antenupcial." },
+      { q: "Qual parte do patrimônio vai obrigatoriamente aos herdeiros necessários?", options: ["50% (a legítima)", "10%", "100%"], answer: 0, explain: "A outra metade é a parte disponível, que pode ser destinada por testamento." }
+    ] }
+  },
+
+  /* ---- Estrutura ---- */
+  "e-historia": {
+    title: "Nossa história em 18 marcos", icon: "book", minutes: 8,
+    cards: [
+      { t: "A origem", b: "A história começa com Dionísio Dalla Bernardina, que empreendeu ao lado dos filhos. Em 1958 nasce a Irmãos Dalla Bernardina S/A Ferragens, em Colatina, sob a administração dos filhos mais velhos, José e Claudionor. Esse legado é o ponto de partida de uma jornada que atravessa gerações." },
+      { t: "Linha do tempo", b: "Da loja de ferragens à Central de Aço com operação industrial em quatro estados.", visual: "timelineFull" }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "A Cedisa sucedeu qual empresa em 1975?", options: ["Irmãos Dalla Bernardina S/A Ferragens", "Valorização", "Uma siderúrgica de Vitória"], answer: 0, explain: "A empresa de ferragens de 1958, em Colatina." },
+      { q: "Quando começou a implantação da ISO 9001?", options: ["2004", "2013", "2022"], answer: 0, explain: "Junto com a expansão de galpões e máquinas." },
+      { q: "Qual unidade industrial começou a operar em 2023?", options: ["Volta Redonda (RJ)", "Recife (PE)", "Fortaleza (CE)"], answer: 0, explain: "Volta Redonda. Fortaleza (2024) é ponto de venda." },
+      { q: "O que marcou 2022?", options: ["Cercado da Pedra, escritório em Cuiabá e nova marca", "Fundação da Cedisa", "Filial em Salvador"], answer: 0, explain: "Um ano de expansão e nova identidade." }
+    ] }
+  },
+  "e-regimento": {
+    title: "O Regimento do Conselho de Família", icon: "shield", minutes: 10,
+    cards: [
+      { t: "O que é e para que serve", b: "O Conselho de Família do Grupo Cedisa promove a coesão e o desenvolvimento dos membros da família, zela pelos valores familiares e busca a longevidade da empresa com governança estruturada. São membros da família todos os que compõem as holdings Santa Lucia e Ultrapar e seus herdeiros em linha reta, de todas as gerações." },
+      { t: "Quem participa", b: "Até 4 membros indicados por cada holding (excepcionalmente, mais um de cada, por acordo). Cada holding indica ao menos 1 membro da 2ª geração. Mandato de 2 anos, com uma reeleição, e renovação de ao menos 50% a cada eleição. O coordenador é escolhido entre os membros.", visual: "regimento" },
+      { t: "Como funciona", b: "No mínimo 4 reuniões ordinárias por ano, uma por trimestre, com agenda definida na primeira reunião do ano. Convocação com 15 dias de antecedência, pauta e material. Ata feita pelo secretário e assinada na reunião seguinte." },
+      { t: "Deveres e ligação com o CA", b: "Conselheiros chegam preparados, participam ativamente e guardam sigilo. Quem falta a mais de 25% das reuniões ou a 2 seguidas perde o cargo. O coordenador participa das reuniões do Conselho de Administração como observador, sem voto." }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "Quantos membros cada holding pode indicar, em regra?", options: ["Até 2", "Até 4", "Quantos quiser"], answer: 1, explain: "Até 4, com representação equitativa." },
+      { q: "Qual é a exigência de geração na indicação de cada holding?", options: ["Ao menos 1 membro da 2ª geração", "Só membros da 3ª geração", "Nenhuma"], answer: 0, explain: "Garante a experiência da 2ª geração no Conselho." },
+      { q: "Um conselheiro perde o cargo se...", options: ["Faltar a 2 reuniões seguidas ou tiver menos de 75% de presença", "Discordar do coordenador", "Faltar a 1 reunião"], answer: 0, explain: "Compromisso com a presença é dever do conselheiro." },
+      { q: "Para alterar o Regimento é preciso...", options: ["Aprovação de 2/3 dos membros do Conselho", "Maioria simples", "Decisão do coordenador"], answer: 0, explain: "Mudanças exigem amplo consenso." }
+    ] }
+  },
+  "e-riqueza": {
+    title: "Construir riqueza entre gerações", icon: "chart", minutes: 10,
+    cards: [
+      { t: "Os quatro pilares", b: "Sustentar o sucesso por gerações exige: união da família e da organização, talentos familiares e não familiares, crescimento dos ativos da família e governança que dê conta de uma família e de um negócio cada vez mais complexos." },
+      { t: "Crescer mais do que se consome", b: "Os ativos precisam crescer acima do que a família consome: despesas, novos investimentos que não dão certo, divisões de patrimônio e reinvestimentos necessários. Uma referência usada por consultorias é crescer acima de 6% ao ano em termos reais." },
+      { t: "Ativos que não aparecem no balanço", b: "Além de empresas, imóveis e aplicações, a família tem ativos intangíveis: cultura, valores, missão e visão, talento e know-how, relacionamentos e reputação. A Valorização e a Cedisa são tangíveis; o nome Dalla Bernardina é intangível." },
+      { t: "Operadora, investidora ou as duas?", b: "Famílias podem concentrar a riqueza em empresas que operam, combinar operação e investimentos, ou virar investidoras. Cada modelo exige competências diferentes dos sócios: execução, gestão ou investimento." }
+    ],
+    activity: { type: "sort", prompt: "Esse ativo é tangível ou intangível?", bins: ["Tangível", "Intangível"], items: [
+      { t: "A fábrica de Calogi", bin: 0 }, { t: "A reputação do nome Dalla Bernardina", bin: 1 }, { t: "Terrenos da Valorização em Aracruz", bin: 0 }, { t: "Os valores deixados pelos fundadores", bin: 1 }, { t: "O know-how em beneficiamento de aço", bin: 1 }, { t: "O estoque de bobinas", bin: 0 }
+    ] }
+  },
+  "e-capital": {
+    title: "Alocação de capital na prática", icon: "coin", minutes: 12,
+    cards: [
+      { t: "Crescimento, liquidez e controle", b: "Toda decisão sobre o lucro equilibra crescer (reinvestir, novos negócios), dar liquidez (dividendos, reservas) e manter o controle (evitar diluição, reduzir riscos). Uma visão estratégica clara da família torna essa escolha mais fácil e menos emocional." },
+      { t: "Crie valor de verdade", b: "Um investimento só cria valor quando o retorno supera o custo de capital. Invista onde se cruzam a aspiração dos sócios, oportunidades reais de crescimento e um diferencial que a família tem." }
+    ],
+    activity: { type: "allocate", preset: "caso" }
+  },
+  "e-conflitos": {
+    title: "Harmonia, alinhamento e união", icon: "handshake", minutes: 8,
+    cards: [
+      { t: "Três palavras diferentes", b: "Harmonia é 'gostamos uns dos outros'. Concordância é 'não há conflito'. Alinhamento é 'temos um propósito comum, mesmo com perspectivas diferentes'. União familiar não exige unanimidade nem harmonia o tempo todo: exige alinhamento sobre valores, missão, visão e sobre como a família funciona junta." },
+      { t: "Tensões comuns", b: "Objetivos e estratégias, divisão de responsabilidades e de poder, reinvestir ou distribuir lucros, estilos de vida diferentes e feridas antigas. A união precisa ser reconstruída a cada geração, com irmãos e primos." },
+      { t: "Conversa construtiva em 4 passos", b: "Preparação (o que eu quero, o que o outro quer). Empatia (entender a perspectiva do outro). Assertividade (colocar a sua de forma estruturada). Colaboração (achar juntos um caminho)." }
+    ],
+    activity: { type: "quiz", questions: [
+      { q: "União familiar, segundo as boas práticas, significa...", options: ["Alinhamento sobre valores, missão e visão", "Todos concordarem em tudo", "Nunca tocar em assuntos difíceis"], answer: 0, explain: "Dá para discordar e continuar unido." },
+      { q: "Qual é o primeiro passo de uma conversa construtiva?", options: ["Preparação", "Colaboração", "Decisão"], answer: 0, explain: "Saber sobre o que a conversa realmente se trata." },
+      { q: "Reinvestir ou distribuir lucros é...", options: ["Uma tensão comum que precisa de regras claras", "Um assunto proibido", "Decisão só do gestor"], answer: 0, explain: "Por isso existem política de dividendos e acordo de sócios." }
+    ] }
+  }
+});
+
+/* ---------- Simulador de alocação ---------- */
+window.FORJA.allocs = {
+  caso: {
+    title: "Divida R$ 100 milhões de lucro",
+    note: "Caso hipotético para treinar o olhar de sócio. Não são números do Grupo Cedisa.",
+    total: 100,
+    buckets: [
+      { id: "reinv", t: "Reinvestir na expansão da empresa", axis: "growth", v: 40 },
+      { id: "novo", t: "Novo negócio de um membro da 3ª geração", axis: "growth", v: 10 },
+      { id: "div", t: "Dividendos para a família", axis: "liquidity", v: 20 },
+      { id: "fundacao", t: "Fundação / impacto social", axis: "liquidity", v: 5 },
+      { id: "reserva", t: "Fundo de reserva dos sócios", axis: "control", v: 25 }
+    ],
+    axes: { growth: "Crescimento", liquidity: "Liquidez", control: "Controle" },
+    minDiv: 15
+  }
+};
+
+/* ---------- Regimento Interno do Conselho de Família (resumo) ---------- */
+window.FORJA.regimento = [
+  { cap: "Disposições gerais", t: "O que é", items: [
+    "O Conselho de Família do Grupo Cedisa promove a coesão e o desenvolvimento dos membros da família, zela pelos valores familiares e busca a longevidade da empresa com governança estruturada.",
+    "Membros da família: todos os que compõem as holdings Santa Lucia Participação e Agropecuária S/A e Ultrapar Participação e Agropecuária S/A e seus herdeiros em linha reta, de todas as gerações."
+  ] },
+  { cap: "Atribuições", t: "O que faz", items: [
+    "Promover a coesão e a integração da família",
+    "Planejar e executar a educação e o desenvolvimento dos membros",
+    "Elaborar e revisar o Protocolo Familiar",
+    "Facilitar a comunicação entre familiares e entre família e empresa",
+    "Zelar pelo planejamento patrimonial e sucessório",
+    "Criar e acompanhar comitês temáticos"
+  ] },
+  { cap: "Composição", t: "Quem participa", items: [
+    "Até 4 membros por holding, com representação igual entre as duas (excepcionalmente, mais 1 de cada, por acordo)",
+    "Cada holding indica ao menos 1 membro da 2ª geração",
+    "Se uma holding se dividir, a regra de composição não muda",
+    "Mandato de 2 anos, com uma reeleição; ao menos 50% dos membros se renovam a cada eleição",
+    "Coordenador escolhido entre os membros; em caso de vaga, a holding indica o substituto até a próxima reunião"
+  ] },
+  { cap: "Comitês temáticos", t: "Grupos de trabalho", items: [
+    "O Conselho pode criar comitês para temas específicos, com membros das duas holdings",
+    "Cada comitê tem ao menos 1 membro da 2ª geração, um coordenador e um secretário",
+    "Podem entrar membros ad hoc para projetos específicos",
+    "Na primeira instalação, o Conselho de Administração da Cedisa aprova a estrutura"
+  ] },
+  { cap: "Deveres do conselheiro", t: "Compromissos", items: [
+    "Chegar preparado, tendo lido os documentos, e participar ativamente",
+    "Cumprir com zelo as atividades designadas",
+    "Manter sigilo sobre as informações do cargo",
+    "Perde o cargo quem tiver menos de 75% de presença ou faltar a 2 reuniões seguidas"
+  ] },
+  { cap: "Reuniões", t: "Como funciona", items: [
+    "Mínimo de 4 reuniões ordinárias por ano (uma por trimestre), além das extraordinárias",
+    "Agenda anual definida na primeira reunião do ano",
+    "Convocação com 15 dias de antecedência, com pauta e material",
+    "Convocadas pelo coordenador ou por qualquer membro, com justificativa",
+    "Ata feita pelo secretário e assinada pelos presentes na reunião seguinte"
+  ] },
+  { cap: "Relação com o Conselho de Administração", t: "Ponte com a empresa", items: [
+    "Relação próxima e colaborativa, integrando as decisões da família à estratégia",
+    "O coordenador do Conselho de Família participa das reuniões do CA como observador, sem voto"
+  ] },
+  { cap: "Disposições finais", t: "Mudanças", items: [
+    "Alterações exigem aprovação de ao menos 2/3 dos membros",
+    "Casos omissos são resolvidos pelo Conselho com equidade e justiça",
+    "Vale a partir da aprovação pelo Conselho"
+  ] }
+];
+
+/* ---------- Referências de boas práticas ---------- */
+window.FORJA.references = [
+  "Cambridge Family Enterprise Group (CFEG), Winter Training 2025: governança, mentalidade de sócio, cultura, conflitos, sucessão e alocação de capital",
+  "IBGC: Governança da Família Empresária (Caderno 15) e Sucessão em Empresas Familiares",
+  "IBGC: Código das Melhores Práticas de Governança Corporativa, 6ª edição",
+  "Modelo dos três círculos (Tagiuri e Davis, 1978)"
+];
