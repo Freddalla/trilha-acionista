@@ -11,7 +11,7 @@ mapa de aptidões.
 |---|---|---|
 | Minério | 0–3 | Para fazer no colo de um adulto (cores, caminhões, "forte como o aço") |
 | Faísca | 4–6 | Lúdico: onde mora o aço, cofrinho, valores em situações do dia a dia |
-| Lingote | 7–9 | História da família, do minério à viga, mapa, "quanto sobra de R$ 100" |
+| Barra | 7–9 | História da família, do minério à viga, mapa, "quanto sobra de R$ 100" |
 | Chapa | 10–12 | As duas empresas, produtos, números de 2026, banca de brigadeiro |
 | Perfil | 13–17 | Três círculos, margem de 4%, primeira DRE, mercado, Qual aço é você? |
 | Viga | 18–24 | Papéis do acionista, leitura da DRE, indicadores, SPE, caminhos de carreira |

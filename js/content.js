@@ -159,7 +159,7 @@ window.FORJA = {
       modules: ["m-caminhao", "m-cores", "m-forte", "m-escutar", "m-domingo"] },
     { id: "faisca", name: "Faísca", min: 4, max: 6, age: "4 a 6 anos", line: "O fogo que acende a curiosidade.", mode: "kid", guide: "Brincadeiras curtas. Um adulto pode ler junto.",
       modules: ["f-oque", "f-contar", "f-valores", "f-conversar", "f-cofrinho", "f-missao"] },
-    { id: "lingote", name: "Lingote", min: 7, max: 9, age: "7 a 9 anos", line: "Tomando forma.", mode: "kid",
+    { id: "lingote", name: "Barra", min: 7, max: 9, age: "7 a 9 anos", line: "Tomando forma.", mode: "kid",
       modules: ["l-historia", "l-processo", "l-mapa", "l-100reais", "l-sementes", "l-valores"] },
     { id: "chapa", name: "Chapa", min: 10, max: 12, age: "10 a 12 anos", line: "Pronta para ser moldada.", mode: "teen",
       modules: ["c-grupo", "c-linha", "c-produtos", "c-numeros", "c-brigadeiro", "c-chapeus", "c-valorizacao", "c-entrevista"] },
@@ -268,7 +268,7 @@ window.FORJA = {
       activity: { type: "reflect", prompt: "Pergunte a alguém da família: qual foi o seu primeiro trabalho? Escreva aqui (um adulto pode ajudar).", placeholder: "Ex.: O tio contou que..." }
     },
 
-    /* ===== LINGOTE 7–9 ===== */
+    /* ===== BARRA 7–9 ===== */
     "l-historia": {
       title: "A história que começou em Colatina", icon: "book", minutes: 5,
       cards: [
@@ -688,7 +688,7 @@ window.FORJA = {
   aptitude: {
     profiles: {
       viga: { name: "Viga", area: "Estratégia e governança", d: "Você sustenta. Pensa no longo prazo, organiza, decide com calma. Tem jeito para conselhos e comitês." },
-      lingote: { name: "Lingote", area: "Finanças", d: "Você é valor concentrado. Gosta de números, controla, compara e protege o patrimônio." },
+      lingote: { name: "Barra", area: "Finanças", d: "Você é sólido(a) e de valor. Gosta de números, controla, compara e protege o patrimônio." },
       bobina: { name: "Bobina", area: "Operação e indústria", d: "Você gira a máquina. Gosta de processo, fábrica, logística e ver as coisas acontecendo." },
       telha: { name: "Telha", area: "Comercial e clientes", d: "Você cobre e protege quem está perto. Conversa bem, negocia, cria relações." },
       solda: { name: "Solda", area: "Pessoas e família", d: "Você une. Cuida das relações, da cultura e das tradições. Tem jeito para o Conselho de Família." },
@@ -787,7 +787,7 @@ Object.assign(window.FORJA.modules, {
     ] }
   },
 
-  /* ---- Lingote ---- */
+  /* ---- Barra ---- */
   "l-sementes": {
     title: "Riqueza é como um pomar", icon: "spark", minutes: 5,
     cards: [
